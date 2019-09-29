@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chengw.tiafs.mapper.TeacherMapper">
+
+
+    <select id="getTeacherByUserCode" resultType="com.chengw.tiafs.model.po.TeacherBean">
+        select teacher_id,user_code,username,password from teacher where user_code = #{userCode}
+    </select>
+
+    <select id="getTeacherByUsername" resultType="com.chengw.tiafs.model.po.TeacherBean">
+        select * from teacher WHERE username = #{username}
+    </select>
+
+    <select id="getAllTeacher" resultType="com.chengw.tiafs.model.po.TeacherBean">
+        select * from teacher
+    </select>
+
+</mapper>
