@@ -12,7 +12,7 @@ spring:
         max-interval: 10000
       fail-fast: true
       uri: http://localhost:8001/
-      profile: dev
+      profile: test
 
 
 #在上下文引导中必须先注册到服务中心
