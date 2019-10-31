@@ -18,13 +18,12 @@ public class SecController {
     @Resource
     private RedisLockService redisLockService;
 
-    private final long TIMEOUT = 5*1000;
-
     @RequestMapping(value = "/sec",produces = "text/html;charset = utf8")
     public String SecKill(){
 
         String targetId = UUID.randomUUID().toString();
 
+        long TIMEOUT = 5 * 1000;
         long time = System.currentTimeMillis() + TIMEOUT;
         if(!redisLockService.lock(targetId,String.valueOf(time))){
             return "排队人数太多，请稍后再试.";

@@ -82,7 +82,7 @@ public class UserController {
         Map<String,Object> userInfo = new HashMap(1);
         userInfo.put("username",user.getUsername());
 
-        String token = jwtTokenUtil.gegenrateToken();
+        String token = jwtTokenUtil.generateToken();
         String jwt = jwtTokenUtil.generateJwt(userInfo, token, "**");
         logger.info("jwt:{}",jwt);
         /**

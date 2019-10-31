@@ -3,8 +3,8 @@ package com.chengw.tiafs.controller;
 
 import com.chengw.common.config.cookie.CookieConfigProperties;
 import com.chengw.common.utils.CookieUtils;
+import com.chengw.common.utils.VerifyCodeUtil;
 import com.chengw.tiafs.util.RequestUtil;
-import com.chengw.tiafs.util.VerifyCodeUtil;
 import com.google.common.base.Strings;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
