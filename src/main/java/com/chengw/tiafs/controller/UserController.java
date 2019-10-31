@@ -6,6 +6,7 @@ import com.chengw.common.models.vo.CommonResponse;
 import com.chengw.common.models.vo.UserVO;
 import com.chengw.common.utils.CookieUtils;
 import com.chengw.common.utils.JwtTokenUtil;
+import com.chengw.tiafs.services.SysUserService;
 import com.google.common.base.Strings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,7 +26,7 @@ import java.util.concurrent.TimeUnit;
  * @author chengw
  */
 @RestController
-@RequestMapping("/v1/user")
+@RequestMapping("/v1/users")
 public class UserController {
 
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
@@ -39,6 +40,9 @@ public class UserController {
 
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
+
+    @Autowired
+    private SysUserService sysUserService;
 
 
 
@@ -96,12 +100,11 @@ public class UserController {
 
     }
 
-    @GetMapping("")
+    @GetMapping("/{uid}")
     public @ResponseBody
-    CommonResponse getUserInfo(HttpServletRequest request, HttpServletResponse response){
-        UserVO user = new UserVO();
-        user.setUsername("chengw");
-        return CommonResponse.success(user);
+    CommonResponse getUserInfo(@PathVariable Long uid){
+
+        return CommonResponse.success(sysUserService.findUserById(uid));
     }
 
 }

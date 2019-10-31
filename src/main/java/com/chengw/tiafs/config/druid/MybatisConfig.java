@@ -16,8 +16,9 @@ import javax.sql.DataSource;
 /**
  * @author chengw
  */
-@Configuration
+//@Configuration
 @EnableTransactionManagement
+@Deprecated
 public class MybatisConfig implements TransactionManagementConfigurer {
 
     @Autowired

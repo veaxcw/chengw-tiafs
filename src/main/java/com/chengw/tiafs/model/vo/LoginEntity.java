@@ -24,7 +24,7 @@ public class LoginEntity {
     public boolean equals(LoginEntity obj) {
 
         if(obj != null){
-            return (this.username.equals(obj.getUsername()) && this.password.equals(obj.password))?true:false;
+            return this.username.equals(obj.getUsername()) && this.password.equals(obj.password);
         }
         return false;
     }

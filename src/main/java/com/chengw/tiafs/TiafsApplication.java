@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Bean;
  * @author chengw
  */
 @SpringBootApplication
-@MapperScan(basePackages = "com.chengw")
+@MapperScan(basePackages = "com.chengw.tiafs.mapper")
 @EnableConfigurationProperties({
         JwtConfigProperties.class,
         CookieConfigProperties.class,

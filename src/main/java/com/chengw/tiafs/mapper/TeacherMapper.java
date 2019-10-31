@@ -30,7 +30,6 @@ public interface TeacherMapper {
      * 返回所有老师
      * @return 返回所有老师
      */
-    @Select("select * from teacher")
     List<TeacherBean> getAllTeacher();
 
 

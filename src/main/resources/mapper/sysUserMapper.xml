@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.chengw.tiafs.mapper.SysUserMapper">
+
     <select id="findUserById" resultType="com.chengw.tiafs.model.po.SysUserBean">
         select  `id`, `name`, `email`, `sex`, `phone`, `password`, `user_name`, `created_date`, `updated_date`
         from sys_user where id = #{uid}
     </select>
+
 </mapper>
