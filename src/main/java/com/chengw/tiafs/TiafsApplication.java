@@ -10,7 +10,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+
+import java.util.Arrays;
 
 
 /**
@@ -27,7 +30,11 @@ import org.springframework.context.annotation.Bean;
 public class TiafsApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TiafsApplication.class, args);
+        ConfigurableApplicationContext ctx = SpringApplication.run(TiafsApplication.class, args);
+        final String[] activeProfiles = ctx.getEnvironment().getActiveProfiles();
+        System.out.println("[----------------------------------------------]");
+        System.out.println("> service started: "+ Arrays.toString(activeProfiles));
+        System.out.println("[----------------------------------------------]");
     }
 
     @Bean
