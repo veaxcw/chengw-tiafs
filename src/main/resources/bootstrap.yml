@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: dev
+    active: test
   application:
     name: tiafs
 
@@ -54,4 +54,8 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${server.port}
+      # 将服务部署在云端时，实例id 应该是公网ip 或者是能通过公网访问的域名
+      # 否则将会是本地ip，则本地端的服务将不能从云端的配置中心拉去配置
+      # 切记，这是个坑
+    ip-address: 47.93.19.130
 
