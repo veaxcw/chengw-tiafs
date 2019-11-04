@@ -10,7 +10,7 @@
     </parent>
     
     <groupId>com.chengw</groupId>
-    <artifactId>tiafs</artifactId>
+    <artifactId>chengw-tiafs</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>tiafs</name>
     <description>rebuild by springboot</description>
