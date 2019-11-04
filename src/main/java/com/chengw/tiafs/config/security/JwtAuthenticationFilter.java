@@ -12,7 +12,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 import org.springframework.data.redis.core.RedisTemplate;
+
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.GenericFilterBean;
 
@@ -32,7 +35,9 @@ import java.util.concurrent.TimeUnit;
  * 拦截所有请求头中带有Authorization
  **
  * @author chengwei*/
-//@Component
+@Component
+@Profile("test")
+@Order(Ordered.HIGHEST_PRECEDENCE)
 public class JwtAuthenticationFilter extends GenericFilterBean {
 
     private static final Logger logger = LoggerFactory.getLogger(JwtAuthenticationFilter.class);

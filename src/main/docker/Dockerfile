@@ -4,4 +4,5 @@ FROM  anapsix/alpine-java:8
 VOLUME /tmp
 #将应用jar包复制到 app.jar
 ADD tiafs-0.0.1-SNAPSHOT.jar app.jar
+ENV spring.profiles.active="test"
 ENTRYPOINT ["java","-jar","-Xmx350m","-Xms350m","/app.jar"]

@@ -35,7 +35,7 @@ import java.util.concurrent.TimeUnit;
  **
  * @author chengwei*/
 @Component
-//@Profile("test")
+@Profile("dev")
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class DevJwtAuthenticationFilter extends GenericFilterBean {
 
